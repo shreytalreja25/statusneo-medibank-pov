@@ -29,8 +29,12 @@
   .hero span { position: absolute; left: 14px; top: 12px; font-size: 8.5px; color: #3d3a35; background: rgba(251,250,246,.9); padding: 5px 9px; border-radius: 999px; }
   .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .card { background: #fbfaf6; border: 1px solid #d9d3c6; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 18px 30px -26px rgba(20,20,20,.45); }
-  .shot { height: 172px; overflow: hidden; background: #fff; border-bottom: 1px solid #e6e1d6; }
-  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+  .shot { position: relative; height: 168px; overflow: hidden; background: #ebe7dd; padding: 14px 14px 0; border-bottom: 1px solid #e6e1d6; }
+  .shot .frame { background: #fff; border-radius: 10px 10px 0 0; border: 1px solid #ddd6c8; border-bottom: 0; box-shadow: 0 10px 24px -16px rgba(20,20,20,.45); overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+  .shot .bar { flex: none; height: 14px; display: flex; gap: 3px; align-items: center; padding: 0 7px; border-bottom: 1px solid #ece7dc; background: #f6f3ec; }
+  .shot .bar i { width: 5px; height: 5px; border-radius: 50%; background: #d9d3c6; } .shot .bar i:first-child { background: #fac400; }
+  .shot .frame img { display: block; width: 100%; height: auto; }
+  .shot::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 26px; background: linear-gradient(rgba(235,231,221,0), #ebe7dd 92%); }
   .card .t { padding: 10px 12px 12px; }
   .card .n { font-size: 8.5px; color: #8a6400; }
   .card b { display: block; font-size: 13.5px; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; margin-top: 3px; }
@@ -65,11 +69,11 @@
   <div class="hero"><img src="snaps/hero.png" alt="" /><span class="mono">Member journey × Enterprise Services, joined by agents</span></div>
 
   <div class="grid">
-    <div class="card"><div class="shot"><img src="snaps/voice.png" alt="" style="object-position: 0 0" /></div><div class="t"><span class="n mono">01 · Voice</span><b>The agent that cannot sell</b><p>Asked for a price, it hands over. There is no quote tool to misuse.</p></div></div>
-    <div class="card"><div class="shot"><img src="snaps/claims.png" alt="" style="object-position: 50% 58%" /></div><div class="t"><span class="n mono">02 · Claims</span><b>Checked before it pays</b><p>A duplicate receipt, stopped at the SOP check, not in an audit.</p></div></div>
-    <div class="card"><div class="shot"><img src="snaps/email.png" alt="" /></div><div class="t"><span class="n mono">03 · Personalisation</span><b>Knowing when to say less</b><p>Six agents write it. A rules gate decides if the offer appears.</p></div></div>
-    <div class="card"><div class="shot"><img src="snaps/assure.png" alt="" /></div><div class="t"><span class="n mono">04 · Compliance</span><b>Every call, not two in a hundred</b><p>Each obligation checked against the exact line of the call.</p></div></div>
-    <div class="card"><div class="shot"><img src="snaps/shared.png" alt="" style="object-position: 0 0" /></div><div class="t"><span class="n mono">05 · Back office</span><b>One gateway, any back office</b><p>A lost write, caught on read-back and fixed with no duplicate.</p></div></div>
+    <div class="card"><div class="shot"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="snaps/voice.png" alt="" /></div></div><div class="t"><span class="n mono">01 · Voice</span><b>The agent that cannot sell</b><p>Asked for a price, it hands over. There is no quote tool to misuse.</p></div></div>
+    <div class="card"><div class="shot"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="snaps/claims.png" alt="" /></div></div><div class="t"><span class="n mono">02 · Claims</span><b>Checked before it pays</b><p>A duplicate receipt, stopped at the SOP check, not in an audit.</p></div></div>
+    <div class="card"><div class="shot"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="snaps/email.png" alt="" /></div></div><div class="t"><span class="n mono">03 · Personalisation</span><b>Knowing when to say less</b><p>Six agents write it. A rules gate decides if the offer appears.</p></div></div>
+    <div class="card"><div class="shot"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="snaps/assure.png" alt="" /></div></div><div class="t"><span class="n mono">04 · Compliance</span><b>Every call, not two in a hundred</b><p>Each obligation checked against the exact line of the call.</p></div></div>
+    <div class="card"><div class="shot"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="snaps/shared.png" alt="" /></div></div><div class="t"><span class="n mono">05 · Back office</span><b>One gateway, any back office</b><p>A lost write, caught on read-back and fixed with no duplicate.</p></div></div>
     <div class="card cta">
       <div><span class="n mono">Open it</span><b>Run the agents yourself</b></div>
       <div class="qr"><span class="mono">statusneo-medibank-pov<br />.vercel.app<br /><br />Synthetic data<br />No sign-in</span><img src="qr.svg" alt="QR code to the Agent Studio" /></div>
