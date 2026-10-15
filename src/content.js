@@ -12,7 +12,7 @@ export const HERO = {
   line1: 'Two domains. One helix.',
   line2: 'Agents built inside your squads.',
   lede:
-    'Medibank has set out to redesign whole workflows with AI, not single tasks, across Marketing & Sales Effectiveness and Enterprise Services. This is how we would help, shown running: every member moment and every back-office step joined by agents that work behind a gate, leave a lineage record and stay in your repositories.',
+    'Medibank has set out to redesign whole workflows with AI, not single tasks, across Marketing & Sales Effectiveness and Enterprise Services. This is where a specialist partner can add depth alongside that build, shown running: every member moment and every back-office step joined by agents that work behind a gate, leave a lineage record and stay in your repositories.',
 }
 
 // Outcomes from our live Australian deployments, measured against randomised control or holdout cohorts
@@ -186,11 +186,11 @@ export const RAMP = [
   { w: 'Week 6–8', t: 'Working software', s: 'First release running in your environment, with a baseline agreed with the domain sponsor and product owner.' },
 ]
 
-// The three things Medibank raised in our first conversation
+// Where a specialist partner adds most, alongside Medibank's delivery partner
 export const RAISED = [
-  { t: 'Local practitioners', s: 'Six of the ten sit in Melbourne from week one. Nothing waits on visas, relocation or a recruitment round.' },
-  { t: 'Flexibility', s: 'The squad grows when a domain moves into build and shrinks when it does not. No minimum term on roles.' },
-  { t: 'No second layer', s: 'Your backlog, your ceremonies, your definition of done. We deliver inside the squad, with your people.' },
+  { t: 'Agentic and AI-native engineering', s: 'Senior engineers who have taken voice, claims and email agents to production in an Australian insurer, available at short notice.' },
+  { t: 'Evaluation, guardrails and governance', s: 'Golden-set gates, lineage and AuthenticAI controls on health data, so every agent can answer why a decision went the way it did.' },
+  { t: 'Testing and assurance', s: 'TestKraft for a risk-ranked regression estate, and call or decision assurance that checks every case, not a sample.' },
 ]
 
 export const SQUAD = [

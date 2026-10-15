@@ -243,12 +243,12 @@ export function Squad() {
   return (
     <section className="sec squad-sec" id="squad">
       <div className="wrap" ref={ref}>
-        <SecHead n="VI" lab="How we engage" a="We join your squad." b="We do not run a parallel one.">
-          A senior-weighted, 10 FTE pod, with 6 on the ground in Melbourne from week one, working your backlog to your definition of done. Our Australian practice is already here, so mobilisation does not wait on visas, relocation or recruitment.
+        <SecHead n="VI" lab="How we would engage" a="Beside your delivery partner," b="never a parallel track.">
+          Where a workstream needs extra agentic engineering, evaluation or governance depth, we add a small senior cell inside the same squads, on the same backlog and definition of done. It can start at two or three specialists and grow to a full pod only if a domain needs it. Our Australian practice is already in Melbourne.
         </SecHead>
         <div className="sq-grid">
           <div className="sq-pod">
-            <span className="lab">Indicative starting pod · {total} FTE</span>
+            <span className="lab">Up to a full pod · {total} FTE, if a domain needs it</span>
             <div className="sq-dots">
               {POD.flatMap((p, i) => Array.from({ length: p.n }).map((_, k) => <i key={`${i}${k}`} className={`${p.loc.startsWith('Melbourne') ? 'mel' : 'bl'} ${seen ? 'in' : ''}`} style={{ transitionDelay: `${(i * 2 + k) * 70}ms` }} title={p.r} />))}
             </div>
@@ -266,7 +266,7 @@ export function Squad() {
           </div>
         </div>
         <div className="raised">
-          <span className="eyebrow">The three things you raised when we first spoke</span>
+          <span className="eyebrow">Where a specialist partner helps most</span>
           <div>{RAISED.map((r, i) => <Reveal key={r.t} delay={i * 80} className="rz"><i className="mono">0{i + 1}</i><b>{r.t}</b><span>{r.s}</span></Reveal>)}</div>
         </div>
         <div className="commit">

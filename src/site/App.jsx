@@ -32,7 +32,7 @@ function Header() {
       <div className="hdr-in">
         <a href="#top" className="hdr-logo" onClick={() => setOpen(false)}><SNLogo h={22} /><i>×</i><MedibankLogo h={19} /></a>
         <nav>{NAV.map(([id, n, l]) => <a key={id} href={`#${id}`} className={on === id ? 'on' : ''} onClick={() => setOpen(false)}><i>{n}</i>{l}</a>)}</nav>
-        <a href="#ask" className="btn gold sm hdr-cta">Meet the squad</a>
+        <a href="#ask" className="btn gold sm hdr-cta">Let’s talk</a>
         <button className="hdr-burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}><i /><i /></button>
       </div>
       <div className="hdr-prog" style={{ transform: `scaleX(${prog})` }} />
