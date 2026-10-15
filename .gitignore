@@ -1,3 +1,7 @@
 node_modules
 dist
 qa
+
+emailer/snaps
+emailer/*.png
+emailer/*.pdf

@@ -12,7 +12,7 @@ export const HERO = {
   line1: 'Two domains. One helix.',
   line2: 'Agents built inside your squads.',
   lede:
-    'Medibank has set out to redesign whole workflows with AI, not single tasks, across Marketing & Sales Effectiveness and Enterprise Services. This is where a specialist partner can add depth alongside that build, shown running: every member moment and every back-office step joined by agents that work behind a gate, leave a lineage record and stay in your repositories.',
+    'Every member moment and every back-office step, joined by agents that check before they act, explain every decision and leave the code in your hands. Five of them are running on this page. Open one and try to make it misbehave.',
 }
 
 // Outcomes from our live Australian deployments, measured against randomised control or holdout cohorts
@@ -102,7 +102,7 @@ export const CASES = [
   },
   {
     id: 'email', lead: true, fit: 'Live in production', sector: 'Same Australian insurer · servicing communications', lab: 'email',
-    t: 'Follow-up email personalisation, behind a gate',
+    t: 'Personalised follow-ups that fail safe',
     p: 'Follow-up emails after a servicing interaction came from campaign lists, not from what had just happened with the member.',
     b: 'Six agents on one state machine assemble each email at send time from compliance-approved copy blocks. A deterministic gate decides eligibility before anything renders, and a lineage agent stamps copy, rule and approver on every send.',
     m: [{ v: '3.2×', l: 'incremental take-up vs holdout' }, { v: '1.4M+', l: 'sends in production' }, { v: '0', l: 'eligibility breaches' }],
@@ -113,7 +113,7 @@ export const CASES = [
   },
   {
     id: 'assure', lead: true, fit: 'Regulated Australian enterprise', sector: 'Same Australian insurer · compliance QA', lab: 'assure',
-    t: 'Call compliance checked on every call, not a 2% sample',
+    t: 'Every call reviewed, not a 2% sample',
     p: 'Compliance QA ran on a 2% sample, so most calls were never reviewed in a category with real remediation exposure, and findings arrived 41 days late.',
     b: 'Every call is scored against a codified, versioned obligation set, one control at a time. The agent assembles the evidence, a person makes the finding, and overrides feed the evaluation set. The same pipeline assures the voice agent’s own calls.',
     m: [{ v: '100%', l: 'review coverage, from 2%' }, { v: '68%', l: 'fewer analyst hours, redeployed' }, { v: '41 → 3 days', l: 'time to coaching' }],
@@ -124,7 +124,7 @@ export const CASES = [
   },
   {
     id: 'claims', lead: true, fit: 'Regulated Australian enterprise', sector: 'Same Australian insurer · claims and authorisation intake', lab: 'claims',
-    t: 'Faster claims: classify the document, then verify the SOP',
+    t: 'Claims read, verified and paid before anyone opens them',
     p: 'Claims arrived as mixed, unstructured documents. Classification and extraction were manual, and an earlier robotic automation attempt had failed on the exception path.',
     b: 'Two agents on the same intake. One classifies and extracts across PDFs and images and validates fields against the systems of record. The other checks each policy clause and SOP step before payment. Above a governed confidence threshold claims go straight through; below it a handler gets a fully assembled, cited case.',
     m: [{ v: 'Pre-pay', l: 'SOP check, not post-pay audit' }, { v: '100%', l: 'decisions with a reasoning trail' }, { v: '10 wks', l: 'discovery to go-live' }],
@@ -186,7 +186,7 @@ export const RAMP = [
   { w: 'Week 6–8', t: 'Working software', s: 'First release running in your environment, with a baseline agreed with the domain sponsor and product owner.' },
 ]
 
-// Where a specialist partner adds most, alongside Medibank's delivery partner
+// Where a small specialist cell adds the most depth
 export const RAISED = [
   { t: 'Agentic and AI-native engineering', s: 'Senior engineers who have taken voice, claims and email agents to production in an Australian insurer, available at short notice.' },
   { t: 'Evaluation, guardrails and governance', s: 'Golden-set gates, lineage and AuthenticAI controls on health data, so every agent can answer why a decision went the way it did.' },

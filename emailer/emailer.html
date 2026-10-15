@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<title>StatusNeo × Medibank · Emailer</title>
+<style>
+  @font-face { font-family: 'Inter Tight'; font-weight: 500; src: url('../node_modules/@fontsource/inter-tight/files/inter-tight-latin-500-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter Tight'; font-weight: 700; src: url('../node_modules/@fontsource/inter-tight/files/inter-tight-latin-700-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter Tight'; font-weight: 800; src: url('../node_modules/@fontsource/inter-tight/files/inter-tight-latin-800-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Instrument Serif'; font-style: italic; src: url('../node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2') format('woff2'); }
+  @font-face { font-family: 'JetBrains Mono'; font-weight: 600; src: url('../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-600-normal.woff2') format('woff2'); }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 794px; height: 1123px; }
+  body { font-family: 'Inter Tight', sans-serif; color: #141414; background: #f2efe8; -webkit-font-smoothing: antialiased; position: relative; overflow: hidden; }
+  body::before { content: ''; position: absolute; inset: 0; background: radial-gradient(520px 340px at 92% 4%, rgba(250,196,0,.16), transparent 70%), radial-gradient(420px 300px at 0% 100%, rgba(0,163,224,.06), transparent 70%); pointer-events: none; }
+  .page { position: relative; padding: 34px 40px 28px; height: 100%; display: flex; flex-direction: column; gap: 18px; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+  header { display: flex; align-items: center; justify-content: space-between; }
+  .logos { display: flex; align-items: center; gap: 10px; }
+  .logos .sn { height: 17px; } .logos .mb { height: 16px; } .logos i { font-style: normal; color: #7a756b; font-size: 12px; }
+  header .mono { font-size: 9px; color: #7a756b; }
+  .kicker { font-size: 9.5px; color: #8a6400; display: flex; align-items: center; gap: 8px; }
+  .kicker::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #fac400; box-shadow: 0 0 0 3px rgba(250,196,0,.25); }
+  h1 { font-size: 54px; font-weight: 800; letter-spacing: -.05em; line-height: .95; margin-top: 8px; }
+  h1 em { display: block; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 27px; letter-spacing: -.01em; color: #3d3a35; margin-top: 8px; line-height: 1.1; }
+  .hero { position: relative; height: 236px; border-radius: 22px; overflow: hidden; border: 1px solid #d9d3c6; background: #ebe7dd; }
+  .hero img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+  .hero span { position: absolute; left: 14px; top: 12px; font-size: 8.5px; color: #3d3a35; background: rgba(251,250,246,.9); padding: 5px 9px; border-radius: 999px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .card { background: #fbfaf6; border: 1px solid #d9d3c6; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 18px 30px -26px rgba(20,20,20,.45); }
+  .shot { height: 172px; overflow: hidden; background: #fff; border-bottom: 1px solid #e6e1d6; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+  .card .t { padding: 10px 12px 12px; }
+  .card .n { font-size: 8.5px; color: #8a6400; }
+  .card b { display: block; font-size: 13.5px; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; margin-top: 3px; }
+  .card p { font-size: 10px; line-height: 1.4; color: #3d3a35; margin-top: 4px; font-weight: 500; }
+  .cta { background: #fac400; border-color: #e0a800; padding: 16px; justify-content: space-between; }
+  .cta .n { color: #141414; }
+  .cta b { font-size: 19px; line-height: 1.05; margin-top: 6px; }
+  .cta .qr { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; }
+  .cta .qr img { width: 92px; height: 92px; background: #fff; border-radius: 10px; padding: 6px; }
+  .cta .qr span { font-size: 8px; letter-spacing: .06em; text-transform: none; line-height: 1.5; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid #141414; margin-top: 2px; }
+  .stats div { padding: 10px 12px 0 0; }
+  .stats div + div { padding-left: 12px; border-left: 1px solid #d9d3c6; }
+  .stats strong { display: block; font-size: 28px; font-weight: 800; letter-spacing: -.05em; line-height: 1; }
+  .stats span { display: block; font-size: 10px; font-weight: 700; margin-top: 4px; }
+  footer { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 8px; color: #7a756b; }
+  footer img { height: 16px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="logos"><img class="sn" src="statusneo.svg" alt="StatusNeo" /><i>×</i><img class="mb" src="medibank.png" alt="Medibank" /></div>
+    <span class="mono">October 2026</span>
+  </header>
+
+  <div>
+    <span class="kicker mono">Agentic workflows for health insurance</span>
+    <h1>Five agents.<em>Built for a health insurer. Running in your browser.</em></h1>
+  </div>
+
+  <div class="hero"><img src="snaps/hero.png" alt="" /><span class="mono">Member journey × Enterprise Services, joined by agents</span></div>
+
+  <div class="grid">
+    <div class="card"><div class="shot"><img src="snaps/voice.png" alt="" style="object-position: 0 0" /></div><div class="t"><span class="n mono">01 · Voice</span><b>The agent that cannot sell</b><p>Asked for a price, it hands over. There is no quote tool to misuse.</p></div></div>
+    <div class="card"><div class="shot"><img src="snaps/claims.png" alt="" style="object-position: 50% 58%" /></div><div class="t"><span class="n mono">02 · Claims</span><b>Checked before it pays</b><p>A duplicate receipt, stopped at the SOP check, not in an audit.</p></div></div>
+    <div class="card"><div class="shot"><img src="snaps/email.png" alt="" /></div><div class="t"><span class="n mono">03 · Personalisation</span><b>Knowing when to say less</b><p>Six agents write it. A rules gate decides if the offer appears.</p></div></div>
+    <div class="card"><div class="shot"><img src="snaps/assure.png" alt="" /></div><div class="t"><span class="n mono">04 · Compliance</span><b>Every call, not two in a hundred</b><p>Each obligation checked against the exact line of the call.</p></div></div>
+    <div class="card"><div class="shot"><img src="snaps/shared.png" alt="" style="object-position: 0 0" /></div><div class="t"><span class="n mono">05 · Back office</span><b>One gateway, any back office</b><p>A lost write, caught on read-back and fixed with no duplicate.</p></div></div>
+    <div class="card cta">
+      <div><span class="n mono">Open it</span><b>Run the agents yourself</b></div>
+      <div class="qr"><span class="mono">statusneo-medibank-pov<br />.vercel.app<br /><br />Synthetic data<br />No sign-in</span><img src="qr.svg" alt="QR code to the Agent Studio" /></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div><strong>1.7×</strong><span>right-party contact</span></div>
+    <div><strong>100%</strong><span>calls reviewed, from 2%</span></div>
+    <div><strong>3.2×</strong><span>take-up on gated emails</span></div>
+    <div><strong>0</strong><span>conduct breaches</span></div>
+  </div>
+
+  <footer><span class="mono">Outcomes from StatusNeo production deployments in a regulated Australian insurer</span><img src="medibank-i.png" alt="" /></footer>
+</div>
+</body>
+</html>

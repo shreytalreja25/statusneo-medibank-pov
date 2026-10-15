@@ -9,33 +9,33 @@ import { TechLogo } from '../ui.jsx'
 
 export const LABS = [
   {
-    k: 'voice', n: '01', t: 'Callback voice agent', agenda: 'Marketing & Sales · servicing', C: VoiceLab,
-    do: 'Pick a member from the callback queue and place the call. Try the member who asks for a price, the one who is distressed, and the ones the gate never dials.',
-    proves: 'Conduct is designed in. The agent cannot quote because it has no quote tool, and distress always reaches a person.',
+    k: 'voice', n: '01', t: 'The agent that cannot sell', agenda: 'Voice · member callbacks', C: VoiceLab,
+    do: 'Work the callback queue. One member asks for a price, one is having a hard week, and two should never be called at all. Watch what the agent does with each.',
+    proves: 'Conduct is designed in, not instructed. There is no quote tool to misuse, and distress always reaches a person.',
     cases: ['voice'],
   },
   {
-    k: 'claims', n: '02', t: 'Claims intake', agenda: 'Servicing · claims', C: ClaimsLab,
-    do: 'Drop a document into intake. The classifier reads it, the SOP verifier checks every clause before payment. Then move the confidence threshold across 1,000 replayed claims.',
-    proves: 'Straight-through where the evidence is strong, a fully assembled, cited case for a handler where it is not.',
+    k: 'claims', n: '02', t: 'Checked before it pays', agenda: 'Claims · intake to payment', C: ClaimsLab,
+    do: 'Drop in a receipt or a hospital account. One is a duplicate, one is unreadable, one is excluded. See which claims pay themselves, then tune the threshold across 1,000 more.',
+    proves: 'Clean claims flow straight through. Everything else reaches a handler already assembled, with the clause that decided it.',
     cases: ['claims', 'payer'],
   },
   {
-    k: 'email', n: '03', t: 'Follow-up email', agenda: 'Personalisation · retention', C: EmailLab,
-    do: 'Choose a servicing moment and change the member’s situation. Six agents hand state to each other and the email renders, or fails closed to a clean servicing email.',
-    proves: 'The model assembles approved copy. A deterministic gate, not the model, decides who qualifies.',
+    k: 'email', n: '03', t: 'Knowing when to say less', agenda: 'Personalisation · retention', C: EmailLab,
+    do: 'Pick a moment: after a claim, after a call, before renewal. Change the member’s situation and watch six agents decide what gets written, and when to leave the offer out.',
+    proves: 'The model writes only from approved copy. A rules gate, never the model, decides who hears about what.',
     cases: ['email'],
   },
   {
-    k: 'assure', n: '04', t: 'Call assurance', agenda: 'Compliance · every call', C: AssureLab,
-    do: 'Pick a call and run the assessment. Every obligation is checked on its own, with the line that proves it. Agree or override, then scale the review from 2% to every call.',
-    proves: 'Full coverage without replacing people. The agent assembles evidence, your analysts make findings, and their overrides improve the set.',
+    k: 'assure', n: '04', t: 'Every call, not two in a hundred', agenda: 'Compliance assurance', C: AssureLab,
+    do: 'Four recorded calls, three with something wrong in them. Find the issues, see the exact line that proves each one, then confirm or overrule the agent.',
+    proves: 'Full coverage without taking the decision away from your analysts. Every override makes the checks sharper.',
     cases: ['assure'],
   },
   {
-    k: 'shared', n: '05', t: 'Shared-services agent', agenda: 'Enterprise Services', C: SharedLab,
-    do: 'Ask a Finance, HR, IT or Procurement question, then break the system of record: make it slow, take it down, or lose a write.',
-    proves: 'Same gateway, new domain. Retries, circuit breakers, degraded mode and read-back verification are built in, not bolted on.',
+    k: 'shared', n: '05', t: 'One gateway, any back office', agenda: 'Finance · HR · IT · Procurement', C: SharedLab,
+    do: 'Ask a Finance, HR, IT or Procurement question. Then break the system behind it: slow it down, take it offline, or lose a write.',
+    proves: 'It retries, waits honestly or catches its own mistake. A new domain is configuration on the same safety rail.',
     cases: ['claims', 'cloud'],
   },
 ]
@@ -55,9 +55,9 @@ export default function Studio({ onCase }) {
         <div className="sec-h split">
           <div>
             <span className="sec-num"><i>II</i>Agent Studio</span>
-            <h2>Our production work,<em>rebuilt as agents you can run.</em></h2>
+            <h2>Five agents.<em>Run them yourself.</em></h2>
           </div>
-          <p>Four of these agents are live today in a regulated Australian insurer. The fifth shows the same rail moving into Enterprise Services. They run on synthetic members, policies and documents, and every check is computed in your browser. No Medibank data is used.</p>
+          <p>Four are rebuilt from agents live today in a regulated Australian insurer. The fifth takes the same rail into Finance, HR and IT. Synthetic members, real logic, every check computed in your browser. Nothing here touches Medibank data.</p>
         </div>
         <div className="st-tabs" role="tablist">
           {LABS.map((x) => (
