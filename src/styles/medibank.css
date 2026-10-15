@@ -306,6 +306,11 @@
 .sq-one > div { border-top: 2px solid var(--ink); padding-top: 10px; } .sq-one b { display: block; font-size: 15px; font-weight: 800; } .sq-one span { font-size: 12.5px; line-height: 1.45; color: var(--ink2); }
 .sq-test { padding: 16px 18px; border-radius: 18px; background: var(--ink); color: #fff; } .sq-test .lab { color: var(--gold); }
 .sq-test p { font-family: var(--serif); font-style: italic; font-size: 21px; line-height: 1.35; margin-top: 6px; }
+.raised { margin-top: 28px; }
+.raised > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 12px; }
+.rz { border-radius: 18px; padding: 16px 18px; background: var(--gold-soft); border: 1px solid var(--gold-line); }
+.rz i { font-style: normal; font-size: 11px; color: var(--gold-text); } .rz b { display: block; font-size: 18px; font-weight: 800; letter-spacing: -.02em; margin: 2px 0 4px; } .rz span { font-size: 13.5px; line-height: 1.5; color: var(--ink2); }
+@media (max-width: 760px) { .raised > div { grid-template-columns: 1fr; } }
 .commit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
 .cmt { display: flex; gap: 12px; align-items: flex-start; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
 .cmt img { flex: none; margin-top: 2px; } .cmt b { display: block; font-size: 15.5px; font-weight: 800; } .cmt span { font-size: 13px; line-height: 1.5; color: var(--ink2); }

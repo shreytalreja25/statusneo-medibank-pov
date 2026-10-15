@@ -1,10 +1,10 @@
 // Single source of copy for the site. House style: plain wording, no em dashes,
 // rounded numbers, addressed to Medibank and never to a named individual.
-// Sources: StatusNeo response to RFI WS3251614808 and the StatusNeo healthcare compendium.
+// Sources: StatusNeo production case studies and the StatusNeo healthcare compendium.
 
 export const META = {
   title: 'StatusNeo × Medibank · The Agent Studio',
-  kicker: 'AI delivery partner · Companion to RFI WS3251614808 · October 2026',
+  kicker: 'Agentic workflows for health insurance · A point of view · October 2026',
   contact: { name: 'Shrey Talreja', role: 'Australian practice lead · Decision Fabric', web: 'statusneo.com' },
 }
 
@@ -12,7 +12,7 @@ export const HERO = {
   line1: 'Two domains. One helix.',
   line2: 'Agents built inside your squads.',
   lede:
-    'Medibank asked for a partner that redesigns whole workflows, not single tasks, across Marketing & Sales Effectiveness and Enterprise Services. Here is how that looks when it is running: every member moment and every back-office step joined by agents that work behind a gate, leave a lineage record and stay in your repositories.',
+    'Medibank has set out to redesign whole workflows with AI, not single tasks, across Marketing & Sales Effectiveness and Enterprise Services. This is how we would help, shown running: every member moment and every back-office step joined by agents that work behind a gate, leave a lineage record and stay in your repositories.',
 }
 
 // Outcomes from our live Australian deployments, measured against randomised control or holdout cohorts
@@ -42,7 +42,7 @@ export const BRIEF = {
   objective: 'Not to automate individual tasks, but to redesign end-to-end workflows using agentic and AI-enabled solutions that improve customer, employee and business outcomes.',
 }
 
-// Medibank values, from the RFI, mapped to how we engineer
+// Medibank values, mapped to how we engineer
 export const VALUES = [
   { v: 'Customers First', e: 'The gate runs before the action', s: 'Eligibility, consent and conduct are checked in code before a call is dialled, an email renders or a claim is paid.' },
   { v: 'Own It. Do It.', e: 'Measured against a control cohort', s: 'Every outcome is baselined against a randomised control or holdout, not a before-and-after guess.' },
@@ -90,7 +90,7 @@ export const CAPS = [
 
 export const CASES = [
   {
-    id: 'voice', lead: true, fit: 'A1 · Live in production', sector: 'Leading Australian financial services and insurance provider', lab: 'voice',
+    id: 'voice', lead: true, fit: 'Live in production', sector: 'Leading Australian financial services and insurance provider', lab: 'voice',
     t: 'A voice agent that only calls people who asked to be called',
     p: 'Outbound follow-up for sales enquiries and outstanding underwriting information was slow and costly, and any outbound AI carried real conduct risk.',
     b: 'A callback-only voice agent. An eligibility gate runs before the dialler fires: callback requested, window, consent, do-not-call and attempt cap. The agent holds no offer, quote or pricing tool, so anti-hawking is structural. Distress or any clinical question triggers a warm transfer.',
@@ -101,7 +101,7 @@ export const CASES = [
     baseline: 'Randomised human-dialled control cohort over twelve weeks, same lists and windows.',
   },
   {
-    id: 'email', lead: true, fit: 'A1 · Live in production', sector: 'Same Australian insurer · servicing communications', lab: 'email',
+    id: 'email', lead: true, fit: 'Live in production', sector: 'Same Australian insurer · servicing communications', lab: 'email',
     t: 'Follow-up email personalisation, behind a gate',
     p: 'Follow-up emails after a servicing interaction came from campaign lists, not from what had just happened with the member.',
     b: 'Six agents on one state machine assemble each email at send time from compliance-approved copy blocks. A deterministic gate decides eligibility before anything renders, and a lineage agent stamps copy, rule and approver on every send.',
@@ -112,7 +112,7 @@ export const CASES = [
     baseline: 'Randomised holdout over nine months.',
   },
   {
-    id: 'assure', lead: true, fit: 'A2 · Regulated Australian enterprise', sector: 'Same Australian insurer · compliance QA', lab: 'assure',
+    id: 'assure', lead: true, fit: 'Regulated Australian enterprise', sector: 'Same Australian insurer · compliance QA', lab: 'assure',
     t: 'Call compliance checked on every call, not a 2% sample',
     p: 'Compliance QA ran on a 2% sample, so most calls were never reviewed in a category with real remediation exposure, and findings arrived 41 days late.',
     b: 'Every call is scored against a codified, versioned obligation set, one control at a time. The agent assembles the evidence, a person makes the finding, and overrides feed the evaluation set. The same pipeline assures the voice agent’s own calls.',
@@ -123,7 +123,7 @@ export const CASES = [
     baseline: '11× more findings surfaced against the same control set.',
   },
   {
-    id: 'claims', lead: true, fit: 'A2 · Regulated Australian enterprise', sector: 'Same Australian insurer · claims and authorisation intake', lab: 'claims',
+    id: 'claims', lead: true, fit: 'Regulated Australian enterprise', sector: 'Same Australian insurer · claims and authorisation intake', lab: 'claims',
     t: 'Faster claims: classify the document, then verify the SOP',
     p: 'Claims arrived as mixed, unstructured documents. Classification and extraction were manual, and an earlier robotic automation attempt had failed on the exception path.',
     b: 'Two agents on the same intake. One classifies and extracts across PDFs and images and validates fields against the systems of record. The other checks each policy clause and SOP step before payment. Above a governed confidence threshold claims go straight through; below it a handler gets a fully assembled, cited case.',
@@ -134,7 +134,7 @@ export const CASES = [
     baseline: 'Straight-through rate and handler time measured against the prior manual first pass.',
   },
   {
-    id: 'payer', fit: 'A3 · Health', sector: 'Leading US health insurance payer, national scale', lab: 'claims',
+    id: 'payer', fit: 'Health', sector: 'Leading US health insurance payer, national scale', lab: 'claims',
     t: 'AI-powered payment integrity and claims',
     p: 'Millions of claims ran through legacy rules engines. Improper payments, coordination-of-benefits errors and manual record review drove leakage and audit exposure.',
     b: 'An agentic pipeline for pre- and post-pay integrity checks, LLM-assisted medical record review with evidence trails, automated COB determination and document intelligence, all traced and guarded.',
@@ -142,7 +142,7 @@ export const CASES = [
     tech: ['langgraph', 'snowflake', 'python'], stack: 'LangGraph · Google ADK · RAG · Snowflake · FastAPI · Langfuse',
   },
   {
-    id: 'network', fit: 'A3 · Health', sector: 'US managed-care plan · dual-eligible members', lab: 'shared',
+    id: 'network', fit: 'Health', sector: 'US managed-care plan · dual-eligible members', lab: 'shared',
     t: 'Specialty-based provider network assignment',
     p: 'Providers were assigned to networks regardless of their home and community-based service designation, causing directory confusion and member-access errors.',
     b: 'Rules-driven processing that splits long-term-support records into the right networks, aware of Medicare and Medicaid status, reusing existing directory rules for consistency.',
@@ -150,7 +150,7 @@ export const CASES = [
     tech: ['python', 'snowflake'], stack: 'Provider MDM · network configuration · claims adjudication · ETL',
   },
   {
-    id: 'reg', fit: 'A3 · Health', sector: 'Large US health plan · pharmacy', lab: 'shared',
+    id: 'reg', fit: 'Health', sector: 'Large US health plan · pharmacy', lab: 'shared',
     t: 'Pharmacy regulatory reporting on one foundation',
     p: 'Regulatory reporting data was scattered across operational, financial and pharmacy systems, with inconsistent definitions and limited traceability.',
     b: 'A central regulatory reporting repository in a GCP data lake, standardised rules and definitions, and lineage and reconciliation built in.',
@@ -158,7 +158,7 @@ export const CASES = [
     tech: ['googlecloud', 'python'], stack: 'GCP data lake · BigQuery · ELT · lineage',
   },
   {
-    id: 'cloud', fit: 'A3 · Health', sector: 'Major healthcare provider · APAC and EMEA', lab: 'shared',
+    id: 'cloud', fit: 'Health', sector: 'Major healthcare provider · APAC and EMEA', lab: 'shared',
     t: 'Healthcare cloud and AI modernisation',
     p: 'A fragmented on-prem estate with ageing apps and siloed data. Patient-facing systems suffered downtime and there was no AI-ready foundation.',
     b: 'Phased move to Azure with compliance controls in every layer, a Snowflake data foundation for AI and RAG, observability with auto-healing, and copilots on top.',
@@ -184,6 +184,13 @@ export const RAMP = [
   { w: 'Week 2', t: 'Pairs in your repositories', s: 'Core engineering on site, in your pipelines and tooling, picking up first backlog items beside your engineers.' },
   { w: 'Week 3–4', t: 'Full squad at cadence', s: 'Guardrail and evaluation scaffolding in place, first increment landing in a contained internal workflow.' },
   { w: 'Week 6–8', t: 'Working software', s: 'First release running in your environment, with a baseline agreed with the domain sponsor and product owner.' },
+]
+
+// The three things Medibank raised in our first conversation
+export const RAISED = [
+  { t: 'Local practitioners', s: 'Six of the ten sit in Melbourne from week one. Nothing waits on visas, relocation or a recruitment round.' },
+  { t: 'Flexibility', s: 'The squad grows when a domain moves into build and shrinks when it does not. No minimum term on roles.' },
+  { t: 'No second layer', s: 'Your backlog, your ceremonies, your definition of done. We deliver inside the squad, with your people.' },
 ]
 
 export const SQUAD = [

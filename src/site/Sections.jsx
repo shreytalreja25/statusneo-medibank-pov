@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import {
-  BRIEF, VALUES, HELIX, LAYERS, RAIL, ACCEL, WORKFLOWS, CAPS, CASES, POD, RAMP, SQUAD, COMMIT, PROOF_POINTS, META,
+  BRIEF, VALUES, RAISED, HELIX, LAYERS, RAIL, ACCEL, WORKFLOWS, CAPS, CASES, POD, RAMP, SQUAD, COMMIT, PROOF_POINTS, META,
 } from '../content.js'
 import { TechLogo, asset, SNLogo, MedibankLogo, MedibankI } from '../ui.jsx'
 import { useInView } from './hooks.js'
@@ -23,14 +23,14 @@ export function Reveal({ children, className = '', as: Tag = 'div', delay = 0, .
   return <Tag ref={ref} className={`reveal ${seen ? 'in' : ''} ${className}`} style={{ transitionDelay: `${delay}ms` }} {...rest}>{children}</Tag>
 }
 
-/* ---------------- I · The brief ---------------- */
+/* ---------------- I · The idea ---------------- */
 export function Brief() {
   const [v, setV] = useState(0)
   return (
     <section className="sec brief" id="brief">
       <div className="wrap">
-        <SecHead n="I" lab="The brief, as we read it" a="Redesign the workflow," b="not the task.">
-          {BRIEF.objective} That sentence from the RFI is the design rule for everything below.
+        <SecHead n="I" lab="The idea" a="Redesign the workflow," b="not the task.">
+          {BRIEF.objective} That is the design rule for everything below: an AI capability cell that owns a workflow end to end, from the eligibility rules to the evaluation set.
         </SecHead>
         <div className="br-grid">
           {BRIEF.domains.map((d, i) => (
@@ -126,7 +126,7 @@ export function Reuse() {
     <section className="sec reuse-sec" id="reuse">
       <div className="wrap">
         <SecHead n="IV" lab="Built once, reused" a="One domain pays for the pattern." b="The next one gets it as configuration.">
-          Medibank asked for examples where capability built in one domain was reused in another. These are the ones that already travelled in production, and where each would land across your two domains. Pick a capability.
+          Capability built in one domain should pay for itself again in the next. These are the patterns that already travelled in production, and where each would land across your two domains. Pick a capability.
         </SecHead>
         <div className="ru">
           <div className="ru-caps">
@@ -262,8 +262,12 @@ export function Squad() {
               <div>{RAMP.map((r, i) => <div key={r.w} style={{ transitionDelay: `${i * 160}ms` }}><i className="mono">{r.w}</i><b>{r.t}</b><span>{r.s}</span></div>)}</div>
             </div>
             <div className="sq-one">{SQUAD.map((s, i) => <Reveal key={s.t} delay={i * 70}><b>{s.t}</b><span>{s.s}</span></Reveal>)}</div>
-            <div className="sq-test"><span className="lab">Our proposed handover test</span><p>At the first recommit gate, one of your engineers takes a new workflow from specification to production on the control plane, unaided, with us on call and not at the keyboard.</p></div>
+            <div className="sq-test"><span className="lab">Our proposed handover test</span><p>At the six-month mark, one of your engineers takes a new workflow from specification to production on the control plane, unaided, with us on call and not at the keyboard.</p></div>
           </div>
+        </div>
+        <div className="raised">
+          <span className="eyebrow">The three things you raised when we first spoke</span>
+          <div>{RAISED.map((r, i) => <Reveal key={r.t} delay={i * 80} className="rz"><i className="mono">0{i + 1}</i><b>{r.t}</b><span>{r.s}</span></Reveal>)}</div>
         </div>
         <div className="commit">
           {COMMIT.map((c, i) => <Reveal key={c.t} delay={i * 80} className="cmt"><MedibankI size={20} /><div><b>{c.t}</b><span>{c.s}</span></div></Reveal>)}
@@ -292,9 +296,9 @@ export function Ask() {
         </div>
         <div className="ask-card">
           <div>
-            <span className="lab">For the RFP stage</span>
-            <h3>Pick one workflow. We will run it in your estate.</h3>
-            <p>A working session in Melbourne with the people who would join your squad. We run the Agent Studio on a workflow you choose from either domain, walk the gateway and the control rail against your systems, and agree the baseline we would be measured on.</p>
+            <span className="lab">The offer</span>
+            <h3>One workflow, ninety minutes, nothing attached.</h3>
+            <p>Pick a candidate workflow from either domain and give us ninety minutes in Melbourne. We come back with the eligibility logic, the integration points and the evaluation set we would build against. You keep it either way.</p>
           </div>
           <div className="agenda">
             {[[10, 'Your workflow and its baseline'], [25, 'Live: the agents on your journey'], [15, 'Gateway, evals and lineage'], [10, 'The pod and the first eight weeks']].map(([m, t]) => <div key={t} style={{ flex: m }}><b>{m}′</b><span>{t}</span></div>)}
@@ -314,7 +318,7 @@ export function Footer() {
         <div className="foot-m"><b>{META.contact.name}</b><span>{META.contact.role} · StatusNeo · {META.contact.web}</span></div>
         <img src={asset('brand/authentic-ai-dark.svg')} alt="AuthenticAI" className="foot-aai" />
       </div>
-      <div className="wrap foot-note">Prepared by StatusNeo for Medibank as a companion to RFI WS3251614808. Private and confidential. The Agent Studio runs on synthetic members, policies, documents and calls; no Medibank data is used. Case outcomes are from StatusNeo production deployments, measured against randomised control or holdout cohorts, with client names withheld. StatusNeo figures are from the Team Composition sheet, Q2 2026.</div>
+      <div className="wrap foot-note">Prepared by StatusNeo for Medibank. Private and confidential. The Agent Studio runs on synthetic members, policies, documents and calls; no Medibank data is used. Case outcomes are from StatusNeo production deployments, measured against randomised control or holdout cohorts, with client names withheld. StatusNeo figures are from the Team Composition sheet, Q2 2026.</div>
     </footer>
   )
 }

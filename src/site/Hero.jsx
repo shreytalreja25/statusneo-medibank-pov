@@ -49,7 +49,7 @@ export default function Hero() {
           <p className="hero-lede">{HERO.lede}</p>
           <div className="hero-cta">
             <a href="#studio" className="btn">Open the Agent Studio <span className="mono k">II</span></a>
-            <a href="#brief" className="btn ghost">Start with the brief</a>
+            <a href="#brief" className="btn ghost">Start with the idea</a>
           </div>
         </div>
 

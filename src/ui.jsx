@@ -23,7 +23,7 @@ export function SNLogo({ white = false, h = 24 }) {
   return <img src={asset(`brand/statusneo${white ? '-white' : ''}.svg`)} alt="StatusNeo" style={{ height: h, width: 'auto' }} />
 }
 
-// Official Medibank wordmark, from the RFI asset pack
+// Official Medibank wordmark
 export function MedibankLogo({ h = 22 }) {
   return <img src={asset('brand/medibank.png')} alt="Medibank" style={{ height: h, width: 'auto' }} />
 }

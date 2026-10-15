@@ -1,6 +1,6 @@
 # StatusNeo × Medibank · The Agent Studio
 
-Interactive companion to StatusNeo's response to Medibank RFI WS3251614808 (AI Delivery Partner).
+Interactive StatusNeo point of view for Medibank: agentic workflows across Marketing & Sales Effectiveness and Enterprise Services.
 
 - 3D double-helix hero: the member journey (Marketing & Sales Effectiveness) and Enterprise Services, joined by agents as rungs
 - Agent Studio: five runnable agents on synthetic data, each with a live governance feed, approvals and a hash-chained ledger
@@ -9,7 +9,7 @@ Interactive companion to StatusNeo's response to Medibank RFI WS3251614808 (AI D
   3. Follow-up email (six agents, deterministic gate, fails closed, lineage)
   4. Call assurance (obligation-by-obligation, analyst confirm/override, 2% vs 100%)
   5. Shared-services agent (Finance, HR, IT, Procurement through one gateway; slow, down and lost-write faults)
-- The brief and Medibank values, the framework and control rail, the reuse map, proof (incl. health), the squad model
+- The idea and Medibank values, the framework and control rail, the reuse map, proof (incl. health), the squad model
 
 ```
 npm install

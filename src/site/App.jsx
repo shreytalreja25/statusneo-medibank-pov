@@ -5,7 +5,7 @@ import Studio from '../studio/Studio.jsx'
 import { Brief, Framework, Reuse, Cases, CaseModal, Squad, Ask, Footer } from './Sections.jsx'
 
 const NAV = [
-  ['brief', 'I', 'The brief'], ['studio', 'II', 'Agent Studio'], ['framework', 'III', 'Framework'], ['reuse', 'IV', 'Reuse'],
+  ['brief', 'I', 'The idea'], ['studio', 'II', 'Agent Studio'], ['framework', 'III', 'Framework'], ['reuse', 'IV', 'Reuse'],
   ['cases', 'V', 'Proof'], ['squad', 'VI', 'Your squad'], ['ask', 'VII', 'Team'],
 ]
 
